@@ -162,7 +162,7 @@ export async function getServerSideProps(context: {
 }) {
   const { planet } = context.params;
   // Fetch data from external API
-  const res = await fetch(`http://localhost:3000/api/${planet}`);
+  const res = await fetch(`http://${process.env.API_URL}/api/${planet}`);
   const data = await res.json();
 
   // Pass data to the page via props
